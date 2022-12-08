@@ -24,7 +24,7 @@ class ProfesorModels(models.Model):
     
 class UsuarioModels(models.Model):
     email = CharField(max_length=100)
-    password = CharField(min_length=5, max_length=50)
+    password = CharField(max_length=50)
     
 class MateriaModels(models.Model):
     nombre = CharField(max_length=50)
