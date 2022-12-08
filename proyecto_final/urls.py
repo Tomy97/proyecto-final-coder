@@ -4,6 +4,6 @@ from Campus.views import LoginViews, InicioViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', InicioViews),
-    path('login', LoginViews)
+    path('', InicioViews, name="home"),
+    path('login/', LoginViews, name="login")
 ]
