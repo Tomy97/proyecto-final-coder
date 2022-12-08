@@ -1,0 +1,42 @@
+{% extends "Campus/inicio.html" %} {% block coder %}
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-12 col-md-6">
+      <form action="/usuario/" method="POST">
+        {% csrf_token %}
+        < class="row">
+          <div class="col-12 col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input class="form-control" type="text" name="nombre" />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input class="form-control" type="text" name="apellido" />
+          </div>
+          <div class="col-12">
+          <div class="col-12 col-md-6">
+            <label for="edad" class="form-label">Edad</label>
+            <input class="form-control" type="text" name="edad" /> 
+          </div>  
+            <label class="form-label" for="contacto">Localidad</label>
+            <input class="form-control" type="number" name="contacto" />
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" name="email" />
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="contraseña">Contraseña</label>
+            <input class="form-control" type="contraseña" name="contraseña" />
+          </div>
+        <div class="row my-4">
+          <div class="col-12">
+            <input class="btn btn-primary" type="submit" value="Enviar datos" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

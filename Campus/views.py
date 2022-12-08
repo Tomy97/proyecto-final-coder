@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from Campus.forms import LoginForm
+from Campus.forms import UsuarioForms
+from Campus.models import UsuarioModels
 
 
 def InicioViews(request):
@@ -21,9 +22,19 @@ def LoginViews(request):
             return render(request, 'login', {'error': 'Usuario o contraseña incorrectos'})
     return render(request, 'login.html')
 
-def RegisterViews(request):
+def RegistroViews(request):
     if request.method == 'POST':  
-    
-    
-        pass
+        form = UsuarioForms(request.POST)
+        usuario = UsuarioModels(
+            nombre = request.POST['nombre'],
+            apellido = request.POST['apellido'],
+            localidad = request.POST['localidad'],
+            edad = request.POST['edad'],
+            email = request.POST['email'],
+            contraseña = request.POST['contraseña'],
+        )
+        usuario.save()
+        formulario = UsuarioForms()
+        return render(request, "Campus/formulario_usuario.html", {"formulario": formulario})
+
 
