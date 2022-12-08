@@ -20,3 +20,10 @@ def LoginViews(request):
             print('El usuario no esta registrado')
             return render(request, 'login', {'error': 'Usuario o contraseña incorrectos'})
     return render(request, 'login.html')
+
+def RegisterViews(request):
+    if request.method == 'POST':  
+    
+    
+        pass
+
