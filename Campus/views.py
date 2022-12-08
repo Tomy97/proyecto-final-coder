@@ -2,8 +2,9 @@ from django.shortcuts import render
 
 
 def InicioViews(request):
-    return render(request, 'index.html')
+    return render(request, 'Campus/inicio.html')
 
 
 def LoginViews(request):
-    return render(request, 'login.html')
+    return render(request, 'Campus/login.html')
+
