@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from Campus.forms import UsuarioForms
-from Campus.models import UsuarioModels
+from Campus.forms import *
 
 
 def InicioViews(request):
@@ -24,10 +23,10 @@ def LoginViews(request):
     return render(request, 'login.html')
 
 def RegistroViews(request):
-    register = UserCreationForm()
+    register = RegisterForm()
     print(register)
     if request.method == "POST":
-        register = UserCreationForm(request.POST)
+        register = RegisterForm(request.POST)
         if  register.is_valid():
             register.save()
             return redirect('login')
