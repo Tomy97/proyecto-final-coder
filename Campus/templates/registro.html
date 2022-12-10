@@ -2,32 +2,32 @@
 <div class="container">
   <div class="row justify-content-center my-5">
     <div class="col-12 col-md-6">
-      <form action="/usuario/" method="POST">
+      <form method="POST">
         {% csrf_token %}
         <div class="row">
           <div class="col-12 col-md-6">
             <label for="nombre" class="form-label">Nombre</label>
-            <input class="form-control" type="text" name="nombre" />
+            <input class="form-control" type="text" id="nombre" name="nombre" />
           </div>
           <div class="col-12 col-md-6">
             <label for="apellido" class="form-label">Apellido</label>
-            <input class="form-control" type="text" name="apellido" />
+            <input class="form-control" type="text" id="apellido" name="apellido" />
           </div>
           <div class="col-12 col-md-6">
             <label for="edad" class="form-label">Edad</label>
-            <input class="form-control" type="number" name="edad" /> 
+            <input class="form-control" type="number" id="edad" name="edad" /> 
           </div>  
           <div class="col-12 col-md-6">
-            <label class="form-label" for="contacto">Localidad</label>
-            <input class="form-control" type="text" name="contacto" />
+            <label class="form-label" for="localidad">Localidad</label>
+            <input class="form-control" type="text" id="localidad" name="localidad" />
           </div>
           <div class="col-12">
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" name="email" />
+            <input class="form-control" type="email" id="email" name="email" />
           </div>
           <div class="col-12">
             <label class="form-label" for="contraseña">Contraseña</label>
-            <input class="form-control" type="password" name="contraseña" />
+            <input class="form-control" type="password" id="contraseña" name="contraseña" />
           </div>
         <div class="row my-4">
           <div class="col-12">

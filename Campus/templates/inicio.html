@@ -47,6 +47,11 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
+            {% if user.is_autenticated %}
+            <span>
+              Se autentico
+            </span>
+            {% else %}
             <a
               class="btn btn-primary navbar-brand text-white btn-sm"
               href="{% url 'login' %}"
@@ -61,6 +66,7 @@
             >
               Registro
             </a>
+            {% endif %}
           </div>
         </div>
       </div>
