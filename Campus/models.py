@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import CharField, DateField, DateTimeField, TextField, IntegerField, EmailField
+from django.db.models import CharField, DateTimeField, TextField, IntegerField, EmailField
 
 class UniversidadModels(models.Model):
     nombre = CharField(max_length=50)
@@ -13,7 +13,7 @@ class AlumnoModels(models.Model):
     apellido = CharField(max_length=50)
     email = TextField(max_length=100)
     localidad = CharField(max_length=100)
-    fecha_nac = DateField()
+    fecha_nac = DateTimeField()
     contacto = IntegerField()
 
 class ProfesorModels(models.Model):
@@ -24,7 +24,7 @@ class ProfesorModels(models.Model):
     
 class UsuarioModels(models.Model):
     email = CharField(max_length=100)
-    contraseña = CharField(max_length=50)
+    password = CharField(max_length=50)
     nombre = CharField(max_length=50)
     apellido = CharField(max_length=50)
     localidad = CharField(max_length=50)
@@ -36,3 +36,4 @@ class MateriaModels(models.Model):
     nombre = CharField(max_length=50)
     nota = CharField(max_length=5)
     promedio = CharField(max_length=5)
+
