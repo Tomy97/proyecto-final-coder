@@ -35,6 +35,6 @@ def RegistroViews(request):
         )
         usuario.save()
         formulario = UsuarioForms()
-        return render(request, "Campus/formulario_usuario.html", {"formulario": formulario})
+    return render(request, "formulario_usuario.html", {"formulario": formulario})
 
 
