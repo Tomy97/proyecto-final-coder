@@ -34,7 +34,7 @@ def RegistroViews(request):
             contraseña = request.POST['contraseña'],
         )
         usuario.save()
-        formulario = UsuarioForms()
-    return render(request, "formulario_usuario.html", {"formulario": formulario})
+    formulario = UsuarioForms()
+    return render(request, "registro.html", {"formulario": formulario})
 
 

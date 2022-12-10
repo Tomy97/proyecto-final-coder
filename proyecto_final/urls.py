@@ -4,7 +4,7 @@ from Campus.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', InicioViews, name="home"),
+    path('inicio', InicioViews, name="home"),
     path('login/', LoginViews, name="login"),
     path('registro/', RegistroViews, name="registro-usuarios")
 ]
