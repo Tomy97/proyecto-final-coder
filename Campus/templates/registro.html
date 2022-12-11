@@ -1,34 +1,35 @@
 {% extends "inicio.html" %} {% block coder %}
 <div class="container">
   <div class="row justify-content-center my-5">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-lg-6">
       <form method="POST">
         {% csrf_token %}
         <div class="row">
           <div class="col-12 col-md-6">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input class="form-control" type="text" id="nombre" name="nombre" />
+            <label class="form-label">Nombre</label>
+            {{ register.nombre }}
           </div>
           <div class="col-12 col-md-6">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input class="form-control" type="text" id="apellido" name="apellido" />
+            <label class="form-label">Apellido</label>
+            {{ register.apellido }}
           </div>
           <div class="col-12 col-md-6">
-            <label for="edad" class="form-label">Edad</label>
-            <input class="form-control" type="number" id="edad" name="edad" /> 
-          </div>  
+            <label class="form-label">Edad</label>
+            {{ register.edad }}
+          </div>
           <div class="col-12 col-md-6">
-            <label class="form-label" for="localidad">Localidad</label>
-            <input class="form-control" type="text" id="localidad" name="localidad" />
+            <label class="form-label">Localidad</label>
+            {{ register.localidad }}
           </div>
           <div class="col-12">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" id="email" name="email" />
+            <label class="form-label">Email</label>
+            {{ register.email }}
           </div>
           <div class="col-12">
-            <label class="form-label" for="contraseña">Contraseña</label>
-            <input class="form-control" type="password" id="contraseña" name="contraseña" />
+            <label class="form-label">Contraseña</label>
+            {{ register.contraseña }}
           </div>
+        </div>
         <div class="row my-4">
           <div class="col-12">
             <input class="btn btn-primary" type="submit" value="Enviar" />

@@ -46,26 +46,40 @@
           class="collapse navbar-collapse justify-content-end"
           id="navbarNavAltMarkup"
         >
-          <div class="navbar-nav">
+          <div class="navbar-nav align-items-center">
+            <ul class="navbar-nav mx-0 mx-lg-5">
+              <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'home' %}">Home</a>
+              </li>
+              <li>
+                <a class="nav-link text-black" href="{% url 'about' %}">
+                  About
+                </a>
+              </li>
+            </ul>
             {% if user.is_autenticated %}
             <span>
               Se autentico
             </span>
             {% else %}
-            <a
-              class="btn btn-primary navbar-brand text-white btn-sm"
-              href="{% url 'login' %}"
-              role="button"
-            >
-              Login
-            </a>
-            <a
-              class="btn btn-success navbar-brand text-white btn-sm"
-              href="{% url 'register' %}"
-              role="button"
-            >
-              Registro
-            </a>
+            <div class="my-2 mb-lg-0 text-center">
+              <a
+                class="btn btn-primary navbar-brand text-white"
+                href="{% url 'login' %}"
+                role="button"
+              >
+                Login
+              </a>
+            </div>
+            <div class="my-2 mb-lg-0 text-center">
+              <a
+                class="btn btn-success navbar-brand text-white btn-sm"
+                href="{% url 'register' %}"
+                role="button"
+              >
+                Registro
+              </a>
+            </div>
             {% endif %}
           </div>
         </div>
