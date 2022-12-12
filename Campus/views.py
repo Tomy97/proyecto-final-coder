@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
 from Campus.forms import *
 
 
@@ -11,9 +13,9 @@ def LoginViews(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = request.POST.get('email'),
-            contraseña = request.POST.get('contraseña')
-            user = authenticate(request, email=email, contraseña=contraseña)
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('home')
@@ -33,12 +35,14 @@ def RegistroViews(request):
     if register.is_valid():
         usuario = UsuarioModels(
             email=register.cleaned_data['email'],
-            contraseña=register.cleaned_data['contraseña'],
-            nombre=register.cleaned_data['nombre'],
-            apellido=register.cleaned_data['apellido'],
+            username=register.cleaned_data['email'],
+            password=make_password(register.cleaned_data['password']),
+            first_name=register.cleaned_data['nombre'],
+            last_name=register.cleaned_data['apellido'],
             localidad=register.cleaned_data['localidad'],
             edad=register.cleaned_data['edad'],
         )
+        usuario.save()
         register = CreateUsuarioForms()
         return redirect('login')
     context = {

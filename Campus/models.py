@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import CharField, DateTimeField, TextField, IntegerField, EmailField
-
+from django.contrib.auth.models import AbstractUser
 class UniversidadModels(models.Model):
     nombre = CharField(max_length=50)
     localizacion = CharField(max_length=100)
@@ -22,11 +22,7 @@ class ProfesorModels(models.Model):
     email = TextField(max_length=100)
     materia_a_cargo = CharField(max_length=50)
     
-class UsuarioModels(models.Model):
-    email = CharField(max_length=100)
-    contraseña = CharField(max_length=50)
-    nombre = CharField(max_length=50)
-    apellido = CharField(max_length=50)
+class UsuarioModels(AbstractUser):
     localidad = CharField(max_length=50)
     edad = IntegerField()
     

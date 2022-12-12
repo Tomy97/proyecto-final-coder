@@ -6,14 +6,14 @@ from Campus.models import UsuarioModels
 class LoginForm(forms.ModelForm):
     email = EmailField(label='', widget=forms.EmailInput(
         attrs={"class": 'form-control'}))
-    contraseña = CharField(label='', widget=forms.PasswordInput(
+    password = CharField(label='', widget=forms.PasswordInput(
         attrs={"class": 'form-control'}))
 
     class Meta:
         model = UsuarioModels
         fields = [
             'email',
-            'contraseña'
+            'password'
         ]
 
 
@@ -28,7 +28,7 @@ class CreateUsuarioForms(forms.ModelForm):
         attrs={"class": 'form-control'}))
     email = EmailField(label='', widget=forms.EmailInput(
         attrs={"class": 'form-control'}))
-    contraseña = CharField(label='', widget=forms.PasswordInput(
+    password = CharField(label='', widget=forms.PasswordInput(
         attrs={"class": 'form-control'}))
 
     class Meta:
@@ -39,5 +39,5 @@ class CreateUsuarioForms(forms.ModelForm):
             'edad',
             'localidad',
             'email',
-            'contraseña'
+            'password'
         ]
